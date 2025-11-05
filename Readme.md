@@ -1,8 +1,8 @@
-# Tokio Use Cases
-This repository is a collection of Tokio (Rust async runtime) use case examples
+# Tokio Patterns
+This repository is a collection of Tokio (Rust async runtime) patterns and examples
 
 ## Table of Contents
-### Part 1: Basic Operations
+### Part 1: <span style="color:yellow">Basic Operations</span>
 #### Section 1. [Manual Tokio Runtime Creation](basic_operations/tokio_main_macro.md)
 
 Instead of using the `#[tokio::main]` macro, manually create a Tokio runtime
@@ -11,9 +11,9 @@ Instead of using the `#[tokio::main]` macro, manually create a Tokio runtime
 
 Configure the runtime to use 2 worker threads
 
-### Part 2: Spawning
+### Part 2: <span style="color:yellow">Spawning</span>
 
-### Part 3: Shared State<br>
+### Part 3: <span style="color:yellow">Shared State</span><br>
 #### Section 1. [How Arc Shares Immutable Data Across Multiple Tasks](shared_state/arc_sharing_explanation.md)
 
 This code demonstrates reference-counted thread-safe sharing of immutable data using Arc
