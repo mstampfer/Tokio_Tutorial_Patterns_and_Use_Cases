@@ -1,4 +1,15 @@
 # Table of Contents
+## Part 1: Basic Operations
+### Section 1. [Manual Tokio Runtime Creation](basic_operations/tokio_main_macro.md)
+
+Instead of using the `#[tokio::main]` macro, manually create a Tokio runtime
+
+### Section 2. [Multithreaded Runtime](basic_operations/multi_threaded.md)
+
+Configure the runtime to use 2 worker threads
+
+## Part 2: Spawning
+
 ## Part 3: Shared State<br>
 ### Section 1. [How Arc Shares Immutable Data Across Multiple Tasks](shared_state/arc_sharing_explanation.md) 
 
