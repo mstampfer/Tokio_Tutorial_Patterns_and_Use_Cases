@@ -4,7 +4,7 @@
 
 A **Barrier** is a synchronization point where tasks must **wait** until a specified number of tasks reach that point, then **all proceed together**.
 
-## Correct Implementation
+## Complete Code Example
 
 ```rust
 :dep tokio = { version = "1", features = ["full"] }

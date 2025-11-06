@@ -2,6 +2,41 @@
 
 This code demonstrates how a **watch channel** broadcasts state changes to multiple receivers, where each receiver can observe the latest value. Here's how it works:
 
+## Complete Code Example
+
+```rust
+use tokio::sync::watch;
+use tokio::time::{sleep, Duration};
+
+#[tokio::main]
+async fn main() {
+    let (tx, mut rx1) = watch::channel(0);
+    let mut rx2 = tx.subscribe();
+    
+    let receiver1 = tokio::spawn(async move {
+        while rx1.changed().await.is_ok() {
+            println!("Receiver 1 saw change: {}", rx1.borrow());
+        }
+    });
+    
+    let receiver2 = tokio::spawn(async move {
+        while rx2.changed().await.is_ok() {
+            println!("Receiver 2 saw change: {}", rx2.borrow());
+        }
+    });
+    
+    for i in 1..=3 {
+        sleep(Duration::from_millis(100)).await;
+        tx.send(i);
+    }
+    
+    drop(tx);
+    
+    receiver1.await.unwrap();
+    receiver2.await.unwrap();
+}
+```
+
 ## Key Concept: Watch Channels
 
 A `watch` channel is a **single-producer, multi-consumer** channel designed for broadcasting state updates:
@@ -75,37 +110,4 @@ Receiver 2 saw change: 3
 
 The exact order may vary since both receivers run concurrently, but both will see all three updates (1, 2, 3) because the 100ms delays give them time to process each change.
 
-## Complete Code Example
 
-```rust
-use tokio::sync::watch;
-use tokio::time::{sleep, Duration};
-
-#[tokio::main]
-async fn main() {
-    let (tx, mut rx1) = watch::channel(0);
-    let mut rx2 = tx.subscribe();
-    
-    let receiver1 = tokio::spawn(async move {
-        while rx1.changed().await.is_ok() {
-            println!("Receiver 1 saw change: {}", rx1.borrow());
-        }
-    });
-    
-    let receiver2 = tokio::spawn(async move {
-        while rx2.changed().await.is_ok() {
-            println!("Receiver 2 saw change: {}", rx2.borrow());
-        }
-    });
-    
-    for i in 1..=3 {
-        sleep(Duration::from_millis(100)).await;
-        tx.send(i);
-    }
-    
-    drop(tx);
-    
-    receiver1.await.unwrap();
-    receiver2.await.unwrap();
-}
-```

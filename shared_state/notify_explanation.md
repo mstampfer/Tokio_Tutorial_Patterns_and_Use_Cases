@@ -2,9 +2,7 @@
 
 `Notify` is a simple, lightweight synchronization primitive for **signaling between tasks**. One task waits for a signal, another task sends it.
 
-```rust
-:dep tokio = { version = "1", features = ["full"] }
-```
+## Complete Code Example
 
 ```rust
 use std::sync::Arc;
