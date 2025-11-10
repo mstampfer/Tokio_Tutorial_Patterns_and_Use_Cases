@@ -1,0 +1,5 @@
+# Mark markdown files as documentation
+*.md linguist-documentation
+
+# Mark Rust as the primary language
+*.rs linguist-language=Rust
