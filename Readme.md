@@ -29,7 +29,7 @@ The structure directly mirrors the Tokio tutorial chapters:
 **Recommended approach:** Use the Tokio tutorial to learn core concepts, then refer to this repository for additional patterns, detailed explanations, and practical examples for each topic.
 
 ## Table of Contents
-### Part 1: $\color{yellow}{\textsf{Basic Operations}}$
+### Part 1: <span style="color: #FFD700;">Basic Operations</span>
 #### Section 1. [Manual Tokio Runtime Creation](basic_operations/tokio_main_macro.md)
 
 Instead of using the `#[tokio::main]` macro, manually create a Tokio runtime
@@ -42,7 +42,7 @@ Configure the runtime to use 2 worker threads
 
 This code demonstrates how to create a **single-threaded** Tokio runtime using `new_current_thread()` instead of a multi-threaded runtime.
 
-### Part 2: $\color{yellow}{\textsf{Spawning}}$
+### Part 2: <span style="color: #FFD700;">Spawning</span>
 
 #### Section 1: [Async Function](spawning/async_function.md)
 
@@ -60,7 +60,7 @@ This code demonstrates how to stop a running asynchronous task before it complet
 
 This code demonstrates Rust's Send trait enforcement for data shared across asynchronous tasks.
 
-### Part 3: $\color{yellow}{\textsf{Shared State}}$
+### Part 3: <span style="color: #FFD700;">Shared State</span>
 #### Section 1. [How Arc Shares Immutable Data Across Multiple Tasks](shared_state/arc_sharing_explanation.md)
 
 This code demonstrates reference-counted thread-safe sharing of immutable data using Arc
@@ -92,7 +92,7 @@ Notify is a simple, lightweight synchronization primitive for signaling between 
 
 This code demonstrates how a watch channel broadcasts state changes to multiple receivers, where each receiver can observe the latest value.
 
-### Part 4: $\color{yellow}{\textsf{Channels}}$
+### Part 4: <span style="color: #FFD700;">Channels</span>
 
 #### Section 1. [Tokio MPSC Channel Explanation](channels/mpsc_channel_creation.md)
 
@@ -130,7 +130,7 @@ The request-response pattern is a common communication pattern where a client se
 
 The tokio::select! macro allows you to wait on multiple async operations simultaneously and proceed with whichever completes first. 
     
-### Part 5: $\color{yellow}{\textsf{I/O}}$
+### Part 5: <span style="color: #FFD700;">I/O</span>
 
 #### Section 1. [Asynchronous File Reading in Rust with Tokio](io/async_file_reading_explanation.md)
 
@@ -168,7 +168,7 @@ This document explains how Tokio allows you to split a TCP stream into separate 
 
 This document explains how to add timeouts to asynchronous I/O operations in Rust using tokio::time::timeout. 
     
-### Part 6: $\color{yellow}{\textsf{Framing}}$
+### Part 6: <span style="color: #FFD700;">Framing</span>
 
 #### Section 1. [Understandi1ng `LinesCodec` in Tokio](framing/lines_codec_explanation.md)
 
@@ -202,7 +202,7 @@ This code creates a custom codec that combines JSON serialization with length-de
 
 This decoder implements a length-prefixed protocol that gracefully handles partial frames - situations where a complete message hasn't arrived yet over the network. 
     
-### Part 7: $\color{yellow}{\textsf{Async in Depth}}$
+### Part 7: <span style="color: #FFD700;">Async in Depth</span>
 
 #### Section 1. [Future Trait Basics](async_in_depth/future_explanation.md)
 
@@ -240,7 +240,7 @@ tokio::try_join! is a variant of tokio::join! designed specifically for futures 
 
 An executor is the runtime system that drives futures to completion. 
     
-### Part 8: $\color{yellow}{\textsf{Select}}$
+### Part 8: <span style="color: #FFD700;">Select</span>
 
 #### Section 1. [Understanding `tokio::select!` - Waiting for the First Operation](select/basic_select.md)
 
@@ -278,7 +278,7 @@ This code demonstrates a **graceful shutdown pattern** - one of the most importa
     
 This code demonstrates a **resetting timeout pattern** - a technique where a timeout is continuously reset each time activity occurs.
 
-### Part 9: $\color{yellow}{\textsf{Streams}}$
+### Part 9: <span style="color: #FFD700;">Streams</span>
 #### Section 1. [Iterating Over Streams with while `let Some`](streams/stream_iteration.md)
 
 This code demonstrates how to iterate over an async stream using the while let Some pattern. 
