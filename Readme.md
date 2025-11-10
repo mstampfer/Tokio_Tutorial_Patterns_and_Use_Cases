@@ -240,7 +240,7 @@ tokio::try_join! is a variant of tokio::join! designed specifically for futures 
 
 An executor is the runtime system that drives futures to completion.
 
-### Part 8: $\color{yellow}{\text{Select}}$
+### Part 8: $\color{yellow}{\textsf{Sel{}ect}}$
 
 #### Section 1. [Understanding `tokio::select!` - Waiting for the First Operation](select/basic_select.md)
 
