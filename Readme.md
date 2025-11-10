@@ -238,9 +238,9 @@ tokio::try_join! is a variant of tokio::join! designed specifically for futures 
 
 #### Section 9. [Building a Simple Future Executor with Custom Waker](async_in_depth/custom_executor_polling.md)
 
-An executor is the runtime system that drives futures to completion. 
-    
-### Part 8: $\color{yellow}{\textsf{Tokio Selection}}$
+An executor is the runtime system that drives futures to completion.
+
+### Part 8: $\color{yellow}{\textsf{Select}}$
 
 #### Section 1. [Understanding `tokio::select!` - Waiting for the First Operation](select/basic_select.md)
 
