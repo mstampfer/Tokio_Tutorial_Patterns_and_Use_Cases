@@ -1,6 +1,33 @@
 # Tokio Patterns
 This repository is a collection of Tokio (Rust async runtime) patterns and examples
 
+## Relationship to the Official Tokio Tutorial
+
+This repository is structured to **complement and extend** the [official Tokio tutorial](https://tokio.rs/tokio/tutorial). While the tutorial provides foundational concepts and introductory examples, this collection offers:
+
+- **Additional patterns and use-cases** for each tutorial section
+- **Deeper explanations** with more detailed breakdowns of how mechanisms work
+- **Extended examples** covering edge cases and advanced scenarios
+- **Production-ready patterns** like graceful shutdown, backpressure handling, and cancellation safety
+
+### Section Mapping
+
+The structure directly mirrors the Tokio tutorial chapters:
+
+| Tutorial Section | This Repository | Focus |
+|-----------------|----------------|-------|
+| **Setup / Hello Tokio** | Part 1: Basic Operations | Runtime creation, configuration, threading models |
+| **Spawning** | Part 2: Spawning | Task management, cancellation, `Send` bounds |
+| **Shared State** | Part 3: Shared State | Arc, Mutex, RwLock, Semaphore, Barrier, Notify, Watch channels |
+| **Channels** | Part 4: Channels | MPSC, Oneshot, Broadcast, backpressure, closure handling |
+| **I/O** | Part 5: I/O | File operations, TCP client/server, stream splitting, timeouts |
+| **Framing** | Part 6: Framing | Codecs, custom encoders/decoders, length-delimited protocols |
+| **Async in Depth** | Part 7: Async in Depth | Future trait, pinning, executors, trait objects |
+| **Select** | Part 8: Select | `tokio::select!` patterns, biased selection, cancellation safety |
+| **Streams** | Part 9: Streams | Stream combinators, custom streams, concurrent processing |
+
+**Recommended approach:** Use the Tokio tutorial to learn core concepts, then refer to this repository for additional patterns, detailed explanations, and practical examples for each topic.
+
 ## Table of Contents
 ### Part 1: $\color{yellow}{\textsf{Basic Operations}}$
 #### Section 1. [Manual Tokio Runtime Creation](basic_operations/tokio_main_macro.md)
@@ -271,7 +298,7 @@ This code demonstrates how to use the **`filter` combinator** to selectively kee
 
 This code demonstrates how to use the **`then` combinator** to perform asynchronous transformations on stream values. 
 
-#### Section 6. [Applying Async Functions to Stream Elements with `then`](streams/)stream_then_async_transform.md)
+#### Section 6. [Applying Async Functions to Stream Elements with `then`](streams/stream_then_async_transform.md)
 
 This code demonstrates how to use the **`then` combinator** to apply an asynchronous function to each element in a stream. 
 
